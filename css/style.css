@@ -18,7 +18,8 @@ border-radius:30px;
 body {
   font-family: Arial, Helvetica, sans-serif;
     background-color: #fff176;
-    margin:5px;
+    margin:10px;
+    border-radius: 10px;
 }
 
 /* Style the header */
@@ -49,32 +50,74 @@ body {
 .left,
 .middle{
   padding: 10px;
-  height: 3000px; /* Should be removed. Only for demonstration */
+  height:auto; /* Should be removed. Only for demonstration */
 }
 
 /* Style the left column */
-.left {
-  grid-area: left;
-  background-color: rgb(178,255,89,0.7);
-  border-radius: 10px;
-}
 
 /* Style the middle column */
 .middle {
   grid-area: middle;
-  background-color:#eeff41 ;
+  width:1080px;
+  background-color: rgba(255,255,255,0.3);
+  border-radius: 10px;
+
+}
+.middlecontent{
+width: 100%;
+background-color:rgba(204, 255, 204,0.3);
+padding:25px;
+height: auto;
+border-radius: 20px;
+}
+.middlecontent, h2{
+  display: block;
+  text-align:center;
+}
+.middlecontent, p{
+display: inline-block;
+text-align:left;
+float:left;
+margin:5px 0px 5px 5px;
+color: #000000;
+font-size:14pt;
+}
+.middlecontent p:hover{
+  color:#734d26;
+  text-decoration: underline;
+}
+.middlecontentle, span{
+color:#e67300;
+margin:5px 5px 5px 0px;
+font-weight: bold;
+text-align: left;
+display: inline-block;
+float: left;
+font-size:14pt;
+}
+div.middlepolaroid {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  display: block;
+}
+.middlepolaroid, img{
+  float: right;
+  display:block;
+
 }
 /* Style the footer */
 .footer {
   grid-area: footer;
   background-color:#ffe0b2;
   padding: 10px;
-  text-align: center;
+  text-align:left;
   border-radius:25px;
+  width:100%;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
+@media (max-width:1080px) {
   .grid-container  {
     grid-template-areas:
       'header header header header header header'
@@ -82,31 +125,10 @@ body {
       'middle middle middle middle middle middle'
       'footer footer footer footer footer footer';
   }
+.middle{
+  width:100%;
 }
-.grid-container2 {
-  display: grid;
-  grid-column-gap:0px;
-  grid-row-gap: 0px;
-   padding-right:100%;
-   padding-left: 0px;
-
 }
-
-.grid-item {
-  text-align: center;
-  font-size: 30px;
-
-}
-.grid-container2 h1{
-  position: relative;
-  top:45%;
-}
-.item1 {
-  grid-column: 2;
-  grid-row: 2;
-  padding:0;
-}
-
 .flip-card {
   background-color: transparent;
   width: 250px;
@@ -130,19 +152,18 @@ body {
 
 .flip-card-front, .flip-card-back {
   position: absolute;
-  width: 100%;
+  width:auto;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
+background-color:#ffffff;
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color:#734d26;
   color: white;
   transform: rotateY(180deg);
 }
@@ -178,15 +199,17 @@ li:first-child
 
 .copyright,  .impressum
 {
-  text-align: center;
+  text-align:left;
+  float: left;
 }
 
 .logo
 {
-  height: 8vh;
+  height:50px;
+  width: 50px;
 }
 
-@media (max-width: 768px)
+@media (max-width:1080px)
 {
   li
   {
@@ -196,6 +219,44 @@ li:first-child
 
   .sozial
   {
+
     margin-bottom: 1vh;
   }
+}
+
+#sidenav h2 {
+font-size:21px;
+padding-left:16px;
+margin:-4px 0 4px 0;
+width:204px;
+}
+#sidenav a {font-family:"Segoe UI",Arial,sans-serif;text-decoration:none;display:block;padding:2px 1px 1px 16px}
+.left{
+  grid-area: left;
+position:fixed;
+top:0;
+padding-top:112px;
+padding-bottom:0;
+height:100%;
+width:220px;
+}
+.leftmenuinnerinner {
+height:100%;
+width:100%;
+overflow-y:scroll;
+overflow-x:hidden;
+padding-top:20px;
+}
+@media (max-width:992px) {
+.top {height:100px}
+.top img {display:block;margin:auto;}
+.top .w3schools-logo {position:relative;top:0;width:100%;text-align:center;margin:auto}
+.toptext {width:100%;text-align:center}
+#sidenav {width:260px;}
+#sidenav h2 {font-size:26px;width:100%;}
+#sidenav a {padding:3px 2px 3px 24px;font-size:17px}
+.leftmenuinner {overflow:auto;-webkit-overflow-scrolling:touch;height:100%;position:relative;width:auto;padding-top:0;}
+.leftmenuinnerinner {overflow-y:scroll}
+.bottomad {float:none;text-align:center}
+#skyscraper {min-height:60px}
 }
